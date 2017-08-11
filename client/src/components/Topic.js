@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import Quote from './Quote'
+import Quote from './Quote';
+import { TopicStyle, TileStyle } from '../styles/board'
+
 
 
 class Topic extends Component {
     render() {
         return (
-            <div>
-                {this.props.topic.name}
+            <TopicStyle>
+               <TileStyle> {this.props.topic.name} </TileStyle>
                 {this.props.topic.quotes.map((quote, i) => {
                     return <Quote key={i} value={quote.value} quote={quote.quote} />
                 })}
-            </div>
+            </TopicStyle>
         );
     }
 }
