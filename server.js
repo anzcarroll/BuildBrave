@@ -18,7 +18,7 @@ connection.on('error', (err) => {
 }); 
 
 app.use(bodyParser.json());
-  app.use('/api/inspo', InspoBoardController);
+  app.use('/api/inspoBoard', InspoBoardController);
 
 
 app.get('/', (req,res) => {

@@ -13,9 +13,10 @@ class Home extends Component {
   }
 
   componentWillMount(){
-    axios.get('/api/inspo').then(res => {
+    axios.get('/api/inspoBoard').then(res => {
       console.log(res.data);
-      this.setState({board: res.data})
+      this.setState({board: res.data});
+
     });
   }
 
@@ -25,12 +26,12 @@ class Home extends Component {
         <div>
           <h1>enter a username!</h1>
           <input type="text" name="username" />
-          <button>New Game</button>
+          <button>Be Brave! Build Some Inspiration!</button>
         </div>
         {this.state.board.map((board, i) => (
           <div key={i}>
             <Link to={`/inspoBoard/${board._id}`}>
-              {board.user}'s Inspirational Board!
+              {this.state.user}'s Inspirational Board!
             </Link>
           </div>
         ))}
