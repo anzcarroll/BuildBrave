@@ -14,9 +14,9 @@ class App extends Component {
             <Link to="/add-topic">Topic:</Link>
           </div>
           <div>
-            <Route exact path="/" component={Home} />
-            <Route path="/board/:boardId" component={Board} />
-            <Route path="/add-topic" component={AddTopic} />
+            <Route exact path="/" component={Home} /> 
+            <Route path="inspoBoard/:boardId" component={Board} /> 
+            <Route path="/add-topic" component={AddTopic} /> 
           </div>
         </div>
       </Router>

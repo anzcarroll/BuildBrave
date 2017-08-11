@@ -5,7 +5,7 @@ class Board extends Component {
     return (
       <div>
         Hello From InspoBoard
-        {this.props.match.params.inspoBoardId}
+        {this.props.match.params.boardId}
       </div>
     );
   }
