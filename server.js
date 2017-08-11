@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const InspoBoardController = require("./controllers/inspoBoard");
 const app = express();
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); 
@@ -17,6 +18,9 @@ connection.on('error', (err) => {
 }); 
 
 app.use(bodyParser.json());
+  app.use('/api/inspo', InspoBoardController);
+
+
 app.get('/', (req,res) => {
   res.send('I help people feel a little braver!')
 })
