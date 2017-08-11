@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const quoteSchema = mongoose.Schema({
     value: Number,
     quote: String,
-    image: Boolean
 });
 
 const topicSchema = mongoose.Schema({
