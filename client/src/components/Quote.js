@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { TopicStyle } from '../styles/board'
 
+const activeQuote = (props) =>
+<TopicStyle onClick={props.clicked}>
+<div>
+    <form > </form>
+</div>
+</TopicStyle>
+
 class Quote extends Component {
     constructor() {
         super();

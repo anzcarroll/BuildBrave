@@ -13,8 +13,8 @@ class Home extends Component {
 
   componentWillMount(){
     axios.get('/api/inspoBoard').then(res => {
-      console.log(res.data);
-      this.setState({board: res.data});
+      console.log(res.data.user);
+      this.setState({user: res.data.user});
 
     });
   }
@@ -30,7 +30,7 @@ class Home extends Component {
         {this.state.board.map((board, i) => (
           <div key={i}>
             <Link to={`/inspoBoard/${board._id}`}>
-              {this.state.board.user}'s Inspirational Board!
+              {this.state.user}'s Inspirational Board!
             </Link>
           </div>
         ))}
