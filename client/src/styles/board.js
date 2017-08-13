@@ -9,25 +9,29 @@ export const BoardStyle = styled.div`
 export const TileStyle = styled.div`
 box-sizing: border-box;
 border: 3px solid black;
-background: #2A3698;
+background: #BFDFD0;
 height: 16.67%;
 display: flex;
+flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 font-size: ${props => props.active ? "1rem" : "2rem"};
-font-family: 'Lato';
+font-family: 'BenchNine', sans-serif;
 font-weight: 700;
 color: ${props => props.quote ? "#ffff5f" : "FFF"}
 `;
 
 export const TopicStyle = styled.div`
-height: 100%;
+
+height: 90%;
 width: 20%;
 `;
 export const BoardStyles = styled.div`
-  background-color: black;
-  height: 80vh;
-  width: 90vw;
+  display: flex;
+  justify-content: flex-wrap;
+  background-color: rgb(74,94,88);
+  height: 200vh;
+  width: 80vw;
   margin: 0 auto;
   color: white;
 `;

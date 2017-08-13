@@ -6,7 +6,6 @@ class Home extends Component {
   constructor(){
     super();
     this.state = {
-      user: "",
       redirect: false,
       board: []
     }
@@ -31,7 +30,7 @@ class Home extends Component {
         {this.state.board.map((board, i) => (
           <div key={i}>
             <Link to={`/inspoBoard/${board._id}`}>
-              {this.state.user}'s Inspirational Board!
+              {this.state.board.user}'s Inspirational Board!
             </Link>
           </div>
         ))}

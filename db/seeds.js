@@ -68,7 +68,7 @@ const susy10 = new Quote({
 })
 
 const focus = new Topic({
-    name: "focus",
+    name: "Focus",
     quotes:[ susy6, susy7, susy8, susy9, susy10 ]
 })
 
@@ -96,7 +96,7 @@ const susy15 = new Quote({
 })
 
 const love = new Topic({
-    name: "love",
+    name: "Love",
     quotes:[ susy11, susy12, susy13, susy14, susy15 ]
 })
 
@@ -124,7 +124,7 @@ const susy20 = new Quote({
 })
 
 const selfworth = new Topic({
-    name: "self worth",
+    name: "Self Worth",
     quotes:[ susy16, susy17, susy18, susy19, susy20 ]
 })
 
