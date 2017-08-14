@@ -6,18 +6,21 @@ const QuoteStyles = styled.div`
 background: ${props => props.clicked ? "#e0d8ce" : "#9d99bc"};
 color: #ffff5f;
 border: 3px solid black;
-height: 150px;
-width: 150px;
-
+height: 153px;
+width: 170px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
 `;
 
 const ActiveQuote = (props) => (
-  <QuoteStyles submitted={props.clicked}>
-    <div>{props.quote}</div>
-    <form onSubmit={props.sumbitValue}>
-      <button>Submit</button>
-    </form>
-  </QuoteStyles>
+    <QuoteStyles submitted={props.clicked}>
+        <div>{props.quote}</div>
+        <form onSubmit={props.sumbitValue} value={props.value}>
+            <button>YES</button>
+        </form>
+    </QuoteStyles>
 );
 
 class Quote extends Component {
@@ -27,17 +30,17 @@ class Quote extends Component {
             active: false
         }
     }
-_toggleActive = () => {
- this.setState({active: !this.state.active})
-}
+    _toggleActive = () => {
+        this.setState({ active: !this.state.active })
+    }
 
     render() {
-    if (this.state.active) {
-        return <ActiveQuote submitted={this.state.submitted} quote={this.props.quote.quote}/>;
-    } else {
-      return <QuoteStyles submitted={this.state.submitted} onClick={this._toggleActive}>{this.props.quote.value}</QuoteStyles>;
+        if (this.state.active) {
+            return <ActiveQuote submitted={this.state.submitted} quote={this.props.quote} />;
+        } else {
+            return <QuoteStyles submitted={this.state.submitted} onClick={this._toggleActive}>{this.props.quote.value}</QuoteStyles>;
+        }
     }
-  }
 }
 
 export default Quote;
