@@ -22,16 +22,15 @@ color: ${props => props.quote ? "#ffff5f" : "FFF"}
 `;
 
 export const TopicStyle = styled.div`
-
 height: 90%;
-width: 20%;
+width: 40%;
 `;
 export const BoardStyles = styled.div`
   display: flex;
   justify-content: flex-wrap;
   background-color: rgb(74,94,88);
-  height: 200vh;
-  width: 80vw;
+  height: 210vh;
+  width: 70vw;
   margin: 0 auto;
   color: white;
 `;
