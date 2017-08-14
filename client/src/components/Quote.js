@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { TopicStyle } from '../styles/board'
-import styled from 'styled-components';
+import styled  from 'styled-components';
 
 const QuoteStyles = styled.div`
 background: ${props => props.clicked ? "#e0d8ce" : "#9d99bc"};
@@ -15,11 +15,10 @@ align-items: center;
 `;
 
 const ActiveQuote = (props) => (
-    <QuoteStyles submitted={props.clicked}>
+    <QuoteStyles>
         <div>{props.quote}</div>
-        <form onSubmit={props.sumbitValue} value={props.value}>
-            <button>YES</button>
-        </form>
+        <input type="button" value="yes" onClick={props._changePoints}>
+        </input>
     </QuoteStyles>
 );
 

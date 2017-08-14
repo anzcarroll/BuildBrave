@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Board from "./components/Board";
-import AddTopic from "./components/AddTopic";
+import CreateNewBoard from "./components/CreateNewBoard";
 import NavBar  from './styles/navBar';
 
 class App extends Component {
@@ -13,13 +13,13 @@ class App extends Component {
           <NavBar>
             <h1>BuildBrave</h1>
             <Link to="/">Home</Link>
-            <Link to="/add-topic">Add a Topic</Link>
+            <Link to="/new">Create New Board</Link>
             <a href="#">Login</a>
           </NavBar>
           <div>
             <Route exact path="/" component={Home} /> 
             <Route path="/inspoBoard/:boardId" component={Board} /> 
-            <Route path="/add-topic" component={AddTopic} /> 
+            <Route path="/new" component={CreateNewBoard} /> 
           </div>
         </div>
       </Router>

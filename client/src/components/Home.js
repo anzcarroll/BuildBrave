@@ -13,7 +13,7 @@ class Home extends Component {
 
   componentWillMount(){
     axios.get('/api/inspoBoard').then(res => {
-      console.log(res.data.board.user);
+   
       this.setState({board: res.data});
 
     });

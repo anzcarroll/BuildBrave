@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
-export const BoardStyle = styled.div`
-  text-align: center;
-  h1, h3{
-    margin: 4px;
-  }
-`;
+
 export const TileStyle = styled.div`
 box-sizing: border-box;
 border: 3px solid black;
@@ -29,9 +24,10 @@ export const BoardStyles = styled.div`
   display: flex;
   justify-content: flex-wrap;
   background-color: rgb(74,94,88);
-  height: 210vh;
+  height: 110vh;
   width: 70vw;
   margin: 0 auto;
   color: white;
+ 
 `;
 

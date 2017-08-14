@@ -36,16 +36,21 @@ class Board extends Component {
       })
   }
 
-  _submitYes = (e, quote, id) => {
+  _changePoints = (e, quote, id) => {
     e.preventDefault();
-    const quoteClicked = e.target.value;
-    this.change = () => {
-      this.setState({
-        joyPoints: (`${this.state.joyPoints} + quoteClicked`)
-      })
+    const quoteClicked = e.target.type.value;
+    const newState = { ...this.state }
+    if (quoteClicked.value === 'button') {
+      newState.joyPoints += quote.value
     }
-
+    newState.board[id] = true;
+    this.setState = newState;
+    axios.put('/api/inspoBoard/' + this.state.id, newState).then((res) => {
+      console.log("Successful update");
+    });
   }
+
+
 
 
   render() {
@@ -53,14 +58,13 @@ class Board extends Component {
       <div>
         <h1>Inspo Board made for YOU</h1>
         <h2> by {this.state.user}</h2>
-        <h3>each time you say YES</h3>
-        <h3>a little bit of JOY is added to you:</h3>
-        <h3>{this.state.joyPoints}</h3>
         <div>
           <InspoBoard
             board={this.state.board}
             topics={this.state.topics}
           />
+          <h3>each time you say YES, a little bit of JOY is added to your heart:</h3>
+          <h3>{this.state.joyPoints}</h3>
         </div>
       </div>
     );

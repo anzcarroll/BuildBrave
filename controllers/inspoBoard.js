@@ -18,6 +18,9 @@ router.put("/:id", (req, res) => {
   InspoBoard.findByIdAndUpdate(req.params.id, {joyPoints: req.body.joyPoints}).then((board) =>{
     res.json(board);
   })
+  .catch(err => console.log(err));
 });
+
+
 
 module.exports = router;
