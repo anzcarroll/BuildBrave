@@ -27,6 +27,6 @@ export const BoardStyles = styled.div`
   width: 80%;
   margin: 0 auto;
   color: white;
- 
 `;
+
 

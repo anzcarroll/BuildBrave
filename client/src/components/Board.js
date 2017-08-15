@@ -10,7 +10,7 @@ justify-content: center;
 `;
 
 
-class Board extends Component {
+class  Board extends Component {
   constructor() {
     super();
     this.state = {

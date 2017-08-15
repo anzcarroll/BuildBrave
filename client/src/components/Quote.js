@@ -16,6 +16,8 @@ font-family:'BenchNine', sans-serif;;
 font-size: 1.75rem;
 `;
 
+
+
 const ActiveQuote = (props) => (
     <QuoteStyles>
         <div>{props.quote.quote}</div>

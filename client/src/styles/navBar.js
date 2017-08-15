@@ -6,7 +6,7 @@ const NavBar = styled.div`
   color: white;
   text-decoration: none;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   a {
     padding: 0 15px;

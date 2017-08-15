@@ -13,7 +13,7 @@ class App extends Component {
           <NavBar>
             <h1>BuildBrave</h1>
             <Link to="/">Home</Link>
-            <Link to="/new">Create New Board</Link>
+            
             <a href="#">Login</a>
           </NavBar>
           <div>
