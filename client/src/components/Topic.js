@@ -10,7 +10,7 @@ class Topic extends Component {
             <TopicStyle>
                <TileStyle> {this.props.topic.name} </TileStyle>
                 {this.props.topic.quotes.map((quote, i) => {
-                    return <Quote key={i} value={quote.value} quote={quote.quote} />
+                    return <Quote key={i} quote={quote} changePoints={this.props.changePoints}/>
                 })}
             </TopicStyle>
         );

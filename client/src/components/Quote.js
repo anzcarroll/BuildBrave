@@ -16,8 +16,8 @@ align-items: center;
 
 const ActiveQuote = (props) => (
     <QuoteStyles>
-        <div>{props.quote}</div>
-        <input type="button" value="yes" onClick={props._changePoints}>
+        <div>{props.quote.quote}</div>
+        <input type="button" value="yes" onClick={(e) => props.changePoints(e, props.quote)}>
         </input>
     </QuoteStyles>
 );
@@ -35,9 +35,9 @@ class Quote extends Component {
 
     render() {
         if (this.state.active) {
-            return <ActiveQuote submitted={this.state.submitted} quote={this.props.quote} />;
+            return <ActiveQuote submitted={this.state.submitted} changePoints={this.props.changePoints} quote={this.props.quote} />;
         } else {
-            return <QuoteStyles submitted={this.state.submitted} onClick={this._toggleActive}>{this.props.quote.value}</QuoteStyles>;
+            return <QuoteStyles submitted={this.state.submitted} onClick={this._toggleActive} ></QuoteStyles>;
         }
     }
 }

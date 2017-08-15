@@ -15,7 +15,10 @@ router.get("/:id", (req, res) => {
 })
 
 router.put("/:id", (req, res) => {
-  InspoBoard.findByIdAndUpdate(req.params.id, {joyPoints: req.body.joyPoints}).then((board) =>{
+  const payload =  {
+    joyPoints: req.body.joyPoints
+  }
+  InspoBoard.findByIdAndUpdate(req.params.id, payload).then((board) =>{
     res.json(board);
   })
   .catch(err => console.log(err));

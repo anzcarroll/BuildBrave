@@ -8,7 +8,7 @@ class InspoBoard extends Component {
         return (
             <BoardStyles>
                 {this.props.topics.map((topic, i) => {
-                    return <Topic key={i} topic={topic} />
+                    return <Topic key={i} topic={topic} changePoints={this.props.changePoints} />
                 })}
             </BoardStyles>
         );
