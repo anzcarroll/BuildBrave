@@ -24,7 +24,7 @@ class TopicInput extends Component {
 
             <FormStyle onSubmit={this._createBoard}>
                 <label htmlFor="topic" >Topic: </label>
-                <input onChange={this.props.changeTopic} type="text" value={this.props.name} placeholder="what do you struggle with?" />
+                <input onChange={this.props._changeTopic} type="text" value={this.props.name} placeholder="what do you struggle with?" />
                 <br />
                 {this.props.quotes.map((quote, i) => {
                     return (

@@ -53,7 +53,9 @@ class CreateNewBoard extends Component {
   }
   
   _changeTopic = e => {
-    this.setState({ name: e.target.value });
+    const newState = { ...this.state };
+    newState.topics[0].name =  e.target.value 
+    this.setState(newState);
   }
   _changeEvent = e => {
     const newState = { ...this.state };
@@ -87,13 +89,10 @@ class CreateNewBoard extends Component {
     return (
       <div>
         <FormStyle onSubmit={this._createBoard}>
-          <label htmlFor="topic" >Topic: </label>
-          <input onChange={this._changeTopic} type="text" value={this.state.topic} placeholder="what do you struggle with?"/>
-          <br />
           {this.state.topics.map((topic, i) => {
             return (
               <TopicInput key={i} name={topic.name} quotes={topic.quotes} 
-              _changeEvent={this._changeEvent}
+              _changeEvent={this._changeEvent} _changeTopic={this._changeTopic}
               />
             );
           })}

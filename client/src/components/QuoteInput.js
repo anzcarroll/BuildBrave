@@ -21,7 +21,7 @@ const QuoteInput = props => {
     return (
         <FormStyle>
             <label htmlFor={`${props.quote.value}quote`}> {props.quote.value} Quote: </label>
-            <input onChange={props._changeEvent} type="text"
+            <input onChange={props._changeEvent} type="text" 
                 name={`${props.quote.value}quote`} points={props.quote.value}
                 type="quote" value={props.quote.quote}
             />
