@@ -18,11 +18,12 @@ connection.on('error', (err) => {
 }); 
 
 app.use(bodyParser.json());
-  app.use('/api/inspoBoard', InspoBoardController);
+app.use('/api/inspoBoard', InspoBoardController);
+app.use(express.static(__dirname + '/client/build/'));
 
 
 app.get('/', (req,res) => {
-  res.send('I help people feel a little braver!')
+  res.sendFile(__dirname + '/client/build/index.html')
 })
 
 const PORT = process.env.PORT || 3001;
