@@ -3,15 +3,17 @@ import React, { Component } from 'react';
 import styled  from 'styled-components';
 
 const QuoteStyles = styled.div`
-background: ${props => props.clicked ? "#e0d8ce" : "#9d99bc"};
+background: ${props => props.active ? "#e0d8ce" : "#9d99bc"};
 color: #ffff5f;
 border: 3px solid black;
-height: 153px;
-width: 170px;
+height: 20vh;
+width: 20vw;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 align-items: center;
+font-family:'BenchNine', sans-serif;;
+font-size: 1.75rem;
 `;
 
 const ActiveQuote = (props) => (

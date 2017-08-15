@@ -3,13 +3,13 @@ const Quote = require('../models/quote');
 const Topic = require('../models/topic');
 const router = express.Router();
 
-router.get("/", (req,res) => {
+router.get("/new", (req,res) => {
   Topic.find({}).then((topics) => {
     res.json(topics);
   });
 });
 
-router.post("/", (req, res) => {
+router.post("/new", (req, res) => {
   const quotes = req.body.quotes.map(quote => {
     return new Quote(quote);
   });

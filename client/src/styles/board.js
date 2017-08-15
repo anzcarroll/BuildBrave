@@ -13,7 +13,6 @@ align-items: center;
 font-size: ${props => props.active ? "1rem" : "2rem"};
 font-family: 'BenchNine', sans-serif;
 font-weight: 700;
-color: ${props => props.quote ? "#ffff5f" : "FFF"}
 `;
 
 export const TopicStyle = styled.div`
@@ -24,8 +23,8 @@ export const BoardStyles = styled.div`
   display: flex;
   justify-content: flex-wrap;
   background-color: rgb(74,94,88);
-  height: 110vh;
-  width: 70vw;
+  height: 160%;
+  width: 80%;
   margin: 0 auto;
   color: white;
  
