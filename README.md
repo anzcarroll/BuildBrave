@@ -13,10 +13,12 @@ an app about sharing, building, and viewing inspiration to help people build bra
 # technologies used:
 react // heroku // css // MERN // axios //
 
- # unsolved problems:
- need to actually create a new board
- add random giphy on unfilled inputs
- better css 
+
+ # Futute dev:
+ user login/ edit their board
+ add random giphy on unfilled inputs based on topic input
+ 
+
  
  
  # notes to self:
