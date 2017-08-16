@@ -16,6 +16,7 @@ react // heroku // css // MERN // axios //
  # unsolved problems:
  need to actually create a new board
  add random giphy on unfilled inputs
+ better css 
  
  
  # notes to self:

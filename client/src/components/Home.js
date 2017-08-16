@@ -73,6 +73,7 @@ class Home extends Component {
             <Link to={`/inspoBoard/${board._id}`}>
               {board.user}'s Inspirational Board!
             </Link>
+            <button>Delete</button>
           </div>
         ))}
       </div>

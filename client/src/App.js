@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Board from "./components/Board";
 import CreateNewBoard from "./components/CreateNewBoard";
 import NavBar  from './styles/navBar';
+import Login from './components/Login'
 
 class App extends Component {
   render() {
@@ -14,9 +15,10 @@ class App extends Component {
             <h1>BuildBrave</h1>
             <Link to="/">Home</Link>
             
-            <a href="#">Login</a>
+            <Link to="/Login">Login</Link>
           </NavBar>
           <div>
+            <Route exact path="/Login" component={Login}/>
             <Route exact path="/" component={Home} /> 
             <Route path="/inspoBoard/:boardId" component={Board} /> 
             <Route path="/new" component={CreateNewBoard} /> 

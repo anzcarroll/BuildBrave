@@ -16,6 +16,11 @@ input {
 input:focus {
   width: 40%;
 }
+div {
+  display: flex;
+  flex-direction: ;
+  padding: 5px;
+}
 }
 `
 
@@ -203,10 +208,12 @@ class CreateNewBoard extends Component {
             <hr />
             {this.state.topics.map((topic, i) => {
               return (
+                <div>
                 <TopicInput key={i} index={i} name={topic.name} quotes={topic.quotes}
                   _changeEvent={this._changeEvent} _changeTopic={this._changeTopic}
                   _changeQuotes={this._changeQuotes}
                 />
+                </div>
               );
             })}
             <button> SUBMIT CREATION</button>
