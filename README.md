@@ -1,4 +1,6 @@
 # BuildBrave
+an app about sharing, building, and viewing inspiration to help people build bravery and belief in themselves day by day!
+
 
 
 <a href="https://trello.com/b/IDjFYunW/buildbrave">Trello</a>
