@@ -20,10 +20,10 @@ input:focus {
 const QuoteInput = props => {
     return (
         <FormStyle>
-            <label htmlFor={`${props.quote.value}quote`}> {props.quote.value} Quote: </label>
-            <input onChange={props._changeEvent} type="text" 
-                name={`${props.quote.value}quote`} points={props.quote.value}
-                type="quote" value={props.quote.quote}
+            <label htmlFor={`${props.quote.value}`}> {props.quote.value} Quote: </label>
+            <input onChange={props._changeQuotes} type="text" 
+                name={props.quote.value}
+                type="text" value={props.quote.quote}
             />
             <br />
         </FormStyle>

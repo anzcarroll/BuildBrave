@@ -47,16 +47,27 @@ class CreateNewBoard extends Component {
         }
         ]
       }]
-      }
-    
-      
+    }
+
+
   }
-  
+
   _changeTopic = e => {
     const newState = { ...this.state };
-    newState.topics[0].name =  e.target.value 
+    newState.topics[0].name = e.target.value
     this.setState(newState);
   }
+
+  _changeQuotes = e => {
+    console.log(e.target.name);
+    const newState = { ...this.state };
+    const findQuote = newState.topics[0].quotes.find( (quote) =>{
+      return quote.value === parseInt(e.target.name)
+    }) 
+    findQuote.quote = e.target.value
+    this.setState(newState);
+  }
+
   _changeEvent = e => {
     const newState = { ...this.state };
     const pointValue = e.target.attributes.points.value;
@@ -67,7 +78,7 @@ class CreateNewBoard extends Component {
 
     if (typeValue === "topic") {
       changedTopic.topic = e.target.value;
-    } else if( typeValue === "quote" ) {
+    } else if (typeValue === "quote") {
       changedTopic.quote = e.target.value;
     }
 
@@ -83,7 +94,7 @@ class CreateNewBoard extends Component {
     })
   };
 
-  
+
 
   render() {
     return (
@@ -91,13 +102,14 @@ class CreateNewBoard extends Component {
         <FormStyle onSubmit={this._createBoard}>
           {this.state.topics.map((topic, i) => {
             return (
-              <TopicInput key={i} name={topic.name} quotes={topic.quotes} 
-              _changeEvent={this._changeEvent} _changeTopic={this._changeTopic}
+              <TopicInput key={i} name={topic.name} quotes={topic.quotes}
+                _changeEvent={this._changeEvent} _changeTopic={this._changeTopic}
+                _changeQuotes={this._changeQuotes}
               />
             );
           })}
           <button> SUBMIT CREATION</button>
-        </FormStyle>      
+        </FormStyle>
       </div >
     );
   }
