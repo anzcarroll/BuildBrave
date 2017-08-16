@@ -1,12 +1,12 @@
 # BuildBrave
 
 
-<link href="https://trello.com/b/IDjFYunW/buildbrave">Trello</link>
+<a href="https://trello.com/b/IDjFYunW/buildbrave">Trello</a>
 
 
-<link href="https://gomockingbird.com/projects/4x0s836/4gXVnC">Wireframe</link>
+<a href="https://gomockingbird.com/projects/4x0s836/4gXVnC">Wireframe</a>
 
-<link href="https://build-brave.herokuapp.com/">Heroku</link>
+<a href="https://build-brave.herokuapp.com/">Heroku</a>
 
 # technologies used:
 react // heroku // css // MERN // axios //
