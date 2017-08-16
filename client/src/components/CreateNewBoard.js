@@ -23,6 +23,7 @@ class CreateNewBoard extends Component {
   constructor() {
     super();
     this.state = {
+      user: "",
       topics: [{
         name: "",
         quotes: [{
@@ -68,6 +69,11 @@ class CreateNewBoard extends Component {
     this.setState(newState);
   }
 
+  _changeEventUser = e => {
+    this.setState({ user: e.target.value });
+  }
+
+
   _changeEvent = e => {
     const newState = { ...this.state };
     const pointValue = e.target.attributes.points.value;
@@ -87,9 +93,9 @@ class CreateNewBoard extends Component {
   };
 
 
-  _createBoard = (props, e) => {
+  _createBoard = (state, e) => {
     e.preventDefault();
-    axios.post("/api/new", this.state).then(res => {
+    axios.post("/api/board", this.state).then(res => {
       console.log(res.data);
     })
   };
@@ -99,7 +105,11 @@ class CreateNewBoard extends Component {
   render() {
     return (
       <div>
-        <FormStyle onSubmit={this._createBoard}>
+        <FormStyle> 
+          <form onSubmit={this._createBoard}>
+          <label htmlFor="user" >Create a username:</label>
+          <input onChange={this._changeEventUser} type="text" name="user" />
+          <hr/>
           {this.state.topics.map((topic, i) => {
             return (
               <TopicInput key={i} name={topic.name} quotes={topic.quotes}
@@ -109,6 +119,7 @@ class CreateNewBoard extends Component {
             );
           })}
           <button> SUBMIT CREATION</button>
+          </form>
         </FormStyle>
       </div >
     );

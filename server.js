@@ -20,7 +20,7 @@ connection.on('error', (err) => {
 
 app.use(bodyParser.json());
 app.use('/api/inspoBoard', InspoBoardController);
-app.use('api/new', BoardsController)
+app.use('/api/board', BoardsController)
 app.use(express.static(__dirname + '/client/build/'));
 
 

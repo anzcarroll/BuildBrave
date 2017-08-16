@@ -1,26 +1,34 @@
 const express = require('express');
 const Quote = require('../models/quote');
 const Topic = require('../models/topic');
+const InspoBoard = require('../models/inspoBoard');
 const router = express.Router();
 
-router.get("/", (req,res) => {
+router.get("/", (req, res) => {
+
   Topic.find({}).then((topics) => {
     res.json(topics);
   });
 });
 
 router.post("/", (req, res) => {
-  const quotes = req.body.quotes.map(quote => {
+  console.log(JSON.stringify(req.body))
+  const quotes = req.body.topics[0].quotes.map(quote => {
     return new Quote(quote);
   });
   const topic = new Topic({
-    name: req.body.name,
+    name: req.body.topics[0].name,
     quotes
   });
-  topic.save().then((topic) => {
-    console.log("Success!");
-    res.json(topic);
-  });
+
+  const board = new InspoBoard({
+    user: req.body.user,
+    joyPoints: 0,
+    topics: [topic]
+  })
+
+  board.save().then((board) =>
+  { console.log(board.user); res.json(board); });
 })
 
 module.exports = router;
