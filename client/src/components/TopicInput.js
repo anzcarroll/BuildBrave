@@ -24,14 +24,14 @@ class TopicInput extends Component {
 
             <FormStyle onSubmit={this.props_createBoard}>
                 <label htmlFor="topic" >Topic: </label>
-                <input onChange={this.props._changeTopic}
+                <input onChange={(e) => this.props._changeTopic(e, this.props.index)}
                     type="text" value={this.props.name}
                     placeholder="what do you struggle with?"
                 />
                 <br />
                 {this.props.quotes.map((quote, i) => {
                     return (
-                        <QuoteInput key={i} quote={quote}
+                        <QuoteInput key={i} quote={quote} index={this.props.index}
                             _changeEvent={this.props._changeEvent}
                             _changeQuotes={this.props._changeQuotes}
                         />

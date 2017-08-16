@@ -45,26 +45,117 @@ class CreateNewBoard extends Component {
         {
           value: 10,
           quote: '',
-        }
-        ]
+        }]
+      },
+      {
+        name: "",
+        quotes: [{
+          value: 24,
+          quote: '',
+        },
+        {
+          value: 11,
+          quote: '',
+        },
+        {
+          value: 20,
+          quote: '',
+        },
+        {
+          value: 30,
+          quote: '',
+        },
+        {
+          value: 10,
+          quote: '',
+        }]
+      },
+      {
+        name: "",
+        quotes: [{
+          value: 24,
+          quote: '',
+        },
+        {
+          value: 11,
+          quote: '',
+        },
+        {
+          value: 20,
+          quote: '',
+        },
+        {
+          value: 30,
+          quote: '',
+        },
+        {
+          value: 10,
+          quote: '',
+        }]
+      },
+      {
+        name: "",
+        quotes: [{
+          value: 24,
+          quote: '',
+        },
+        {
+          value: 11,
+          quote: '',
+        },
+        {
+          value: 20,
+          quote: '',
+        },
+        {
+          value: 30,
+          quote: '',
+        },
+        {
+          value: 10,
+          quote: '',
+        }]
+      },
+      {
+        name: "",
+        quotes: [{
+          value: 24,
+          quote: '',
+        },
+        {
+          value: 11,
+          quote: '',
+        },
+        {
+          value: 20,
+          quote: '',
+        },
+        {
+          value: 30,
+          quote: '',
+        },
+        {
+          value: 10,
+          quote: '',
+        }]
       }]
     }
 
 
   }
 
-  _changeTopic = e => {
+  _changeTopic = (e, index) => {
     const newState = { ...this.state };
-    newState.topics[0].name = e.target.value
+    newState.topics[index].name = e.target.value
     this.setState(newState);
   }
 
-  _changeQuotes = e => {
+  _changeQuotes = (e, index) => {
     console.log(e.target.name);
     const newState = { ...this.state };
-    const findQuote = newState.topics[0].quotes.find( (quote) =>{
+    const findQuote = newState.topics[index].quotes.find((quote) => {
       return quote.value === parseInt(e.target.name)
-    }) 
+    })
     findQuote.quote = e.target.value
     this.setState(newState);
   }
@@ -105,20 +196,20 @@ class CreateNewBoard extends Component {
   render() {
     return (
       <div>
-        <FormStyle> 
+        <FormStyle>
           <form onSubmit={this._createBoard}>
-          <label htmlFor="user" >Create a username:</label>
-          <input onChange={this._changeEventUser} type="text" name="user" />
-          <hr/>
-          {this.state.topics.map((topic, i) => {
-            return (
-              <TopicInput key={i} name={topic.name} quotes={topic.quotes}
-                _changeEvent={this._changeEvent} _changeTopic={this._changeTopic}
-                _changeQuotes={this._changeQuotes}
-              />
-            );
-          })}
-          <button> SUBMIT CREATION</button>
+            <label htmlFor="user" >Create a username:</label>
+            <input onChange={this._changeEventUser} type="text" name="user" />
+            <hr />
+            {this.state.topics.map((topic, i) => {
+              return (
+                <TopicInput key={i} index={i} name={topic.name} quotes={topic.quotes}
+                  _changeEvent={this._changeEvent} _changeTopic={this._changeTopic}
+                  _changeQuotes={this._changeQuotes}
+                />
+              );
+            })}
+            <button> SUBMIT CREATION</button>
           </form>
         </FormStyle>
       </div >

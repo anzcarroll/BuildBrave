@@ -62,7 +62,7 @@ class Home extends Component {
             <div className="question-content">
             <Link to="/new">Heck Yes, count me in!</Link>
             <br/>
-              <a href ="http://www.shitexpress.com/">ew, no</a>
+              <a href ="http://www.enlightenmentforassholes.com/">ew, no</a>
             </div>
           </ResponseStyle>
         </div>
